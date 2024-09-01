@@ -1,0 +1,569 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    --var-bg-color: rgb(170, 3, 3);
+    --var-sec-color: rgb(249, 159, 5);
+    --var-text-color: #fff;
+    --var-text-color-dark: #333;
+    --var-bg-light: #f0f4ff;
+    --var-bg-dark: #d3c9f3;
+
+}
+
+header h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header h2 span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: red;
+    font-weight: 4rem;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+body{
+    font-family: century;
+    scroll-behavior: smooth;
+    background-color: var(--var-bg-light);
+    color: var(--var-text-color-dark);
+}
+
+header{
+    height: 4rem;
+    background-color: #fff;
+    padding: 0 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+header nav ul a{
+    text-decoration: none;
+    color: var(--var-text-color-dark);
+    font-weight: 500;
+    transition: 0,5s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav ul a:hover{
+    color: var(--var-sec-color);
+}
+
+header button{
+    background-color: var(--var-sec-color);
+    color: var(--var-text-color);
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button:hover{
+    background-color: var(--var-text-color);
+    border: 1px solid var(--var-sec-color);
+    color: var(--var-text-color-dark);
+}
+
+main{
+    padding: 2rem;
+}
+
+#hero {
+    width: 100%;
+    height: 70vh;
+    border-radius: 5px;
+    padding: 1rem;
+    background: linear-gradient(
+        90deg,
+        var(--var-bg-color) 15%,
+        var(--var-sec-color) 100%
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#hero .gauche h1{
+    font-size: 50px;
+    color: var(--var-text-color);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#hero .gauche p{
+    font-size: clamp(1rem,2vw,1rem);
+    color: var(--var-text-color);
+}
+
+.gauche button{
+    background-color: var(--var-bg-dark);
+    color: var(--var-text-color-dark);
+    margin-top: 1.4rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 180px;
+}
+
+.gauche button:hover{
+    background-color: var(--var-text-color-dark);
+    color: var(--var-text-color);
+    border-radius: 0.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+    border: 1px solid var(--var-text-color);
+    padding: 0.5rem 1rem;
+}
+
+.droite{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.droite img{
+    width: 70%;
+    height: 80%;
+    margin-left: 14rem;
+    z-index: 500;
+}
+
+.effet{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.effet .cercle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.cercle:nth-child(1){
+    background: linear-gradient(90deg,var(--var-bg-color) 15%,rgb(249, 159, 5) 100%);
+    position: absolute;
+    right: 10px;
+    animation: animation 4s ease-in infinite;
+    animation-delay: 1s;
+}
+.cercle:nth-child(2){
+    background: linear-gradient(90deg,var(--var-bg-color) 15%,rgb(249, 159, 5) 100%);
+    position: absolute;
+    left: 10px;
+    animation: animation 4s ease-in infinite;
+    animation-delay: 0,5s;
+}
+.cercle:nth-child(3){
+    background: linear-gradient(90deg,var(--var-bg-color) 15%,rgb(249, 159, 5) 100%);
+    position: absolute;
+    top: 220px;
+    left: 200px;
+    bottom: 10px;
+    animation: animation 4s ease-in infinite;
+    
+}
+
+/*animation cercle*/
+@keyframes animation {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/*a propos*/
+.apropos{
+    background-color: #fff;
+    background-size: cover;
+    position: relative;
+    padding: 35px;
+}
+
+.apropos .contenue{
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.apropos .contenue .box{
+    width: 300px;
+    margin: 20px;
+    background: var(--var-bg-light); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 40px;
+}
+
+.apropos .contenue .box .imbox{
+    border-radius: 50px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.apropos .contenue .box .imbox img{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.apropos .contenue .box .texte{
+    text-align: center;
+    color: black;
+    font-style: italic;
+}
+
+.apropos .contenue .box .texte h3{
+    color: var(--var-bg-color);
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    font-weight: 400;
+}
+
+.apropos .titre h2 ,.apropos .titre p{
+    color: black;
+}
+
+.row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .nom {
+    position: relative;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.row .nom h2{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+.pp .profil p{
+width: 500px;
+margin-left: 450px;
+margin-top: -190px;
+}
+
+.pp .profil img{
+    height: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 7px;
+    box-shadow: 20px 15px 35px rgba(0, 0, 0, 0.8);
+    position: relative;
+    margin-top: 8%;
+    margin-left: 160px;
+}
+
+
+.titre-texte{
+    color: rgb(0, 0, 0);
+    font-size: 1.7em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.titre-texte span {
+    color: var(--var-bg-color);
+    font-size: 2em;
+    font-weight: 400;
+}
+
+
+.titre{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/*boutique*/
+.btn3{
+    background-color: var(--var-sec-color);
+    color: var(--var-text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.13s;
+    text-decoration: none;
+}
+
+.btn3:hover{
+    background-color: black;
+    border: 1px solid var(--var-sec-color);
+    color: var(--var-text-color);
+}
+
+.boutique{
+    background-color: var(--var-bg-light);
+    padding: 45px;
+}
+.boutique .contenue{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    animation: slide linear;
+    animation-timeline: view();
+    animation-range-start: cover 0%;
+    animation-range-end: cover 30%;
+}
+
+.boutique .contenue .box{
+    width: 200px;
+    margin: 25px;
+    border: 7px solid white;
+    box-shadow: 20px 15px 35px rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.boutique .contenue .box .imbox{
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.boutique .contenue .box .imbox img{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.boutique .contenue .box .texte{
+    text-align: center;
+    font-weight: 300;
+    color: black;
+}
+
+.boutique .contenue .box .texte h3{
+    font-weight: 400;
+}
+
+
+/*temoignage*/
+.temoignage{
+    background-color: black;
+    background-size: cover;
+    position: relative;
+    padding: 35px;
+}
+
+.temoignage .contenue{
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.temoignage .contenue .box{
+    width: 300px;
+    margin: 20px;
+    background: var(--var-bg-light); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 40px;
+}
+
+.temoignage .contenue .box .imbox{
+    border-radius: 50px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.temoignage .contenue .box .imbox img{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.temoignage .contenue .box .texte{
+    text-align: center;
+    color: black;
+    font-style: italic;
+}
+
+.temoignage .contenue .box .texte h3{
+    color: var(--var-sec-color);
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    font-weight: 400;
+}
+
+.temoignage .titre h2 ,.temoignage .titre p{
+    color: #fff;
+}
+
+
+/*contact*/
+.contact{
+    background-color: white;
+    background-size: cover;
+    background-position: unset;
+    width: 100%;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+    padding: 40px;
+}
+
+.contactform{
+    padding: 20px 20px ;
+    background: #fff;
+    box-shadow: 5px 15px 50px rgba(0, 0, 0, 0.8);
+    max-width: 500px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 33%;
+}
+
+.contactform h3{
+    color: black;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding-left: 30%;
+}
+
+.contactform .inputboite{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contactform .inputboite input,
+.contact .inputboite textarea 
+{
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    color: var(--var-bg-color);
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.contactform .inputboite input[type="submit"] {
+    font-style: 1em;
+    font-weight: 700;
+    color: black;
+    background: rgba(54, 53, 53, 0.306);
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    outline: none;
+    transition: 0,5s;
+    border: none;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyright{
+    padding: 10px 10px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    background-color: red;
+    text-align: center;
+}
+
+.copyright p:nth-child(1){
+    color: white;
+}
+
+.copyright a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.contact .titre-text span{
+    color: var(--var-sec-color);
+    font-size: 2em;
+}
+
+.inputboite input[type="submit"]:hover{
+    letter-spacing: 4px;
+    background-color: var(--var-sec-color);
+    transition: ease-out;
+    font-style: italic;
+    font-size: small;
+}
